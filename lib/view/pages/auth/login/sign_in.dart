@@ -13,7 +13,6 @@ class SignIn extends StatelessWidget {
   final TextEditingController passController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Stack(
         alignment: Alignment.bottomCenter,
@@ -22,7 +21,7 @@ class SignIn extends StatelessWidget {
             height: double.infinity,
             width: double.infinity,
             child: Image.asset(
-              "assets/images/splash/splash image.png",
+              "assets/images/background/splash image.png",
               height: double.infinity,
               width: double.infinity,
               fit: BoxFit.cover,
@@ -63,9 +62,15 @@ class SignIn extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            MyEmailField(labelText: 'E-mail', controller: emailController,),
+                            MyEmailField(
+                              labelText: 'E-mail',
+                              controller: emailController,
+                            ),
                             const SizedBox(height: 30),
-                            MyPasswordField(labelText: 'Password', controller: passController,),
+                            MyPasswordField(
+                              labelText: 'Password',
+                              controller: passController,
+                            ),
                             TextButton(
                                 onPressed: () {},
                                 child: Text(

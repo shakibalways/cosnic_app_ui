@@ -22,7 +22,7 @@ class _HomeState extends State<Home> {
             height: double.infinity,
             width: double.infinity,
             child: Image.asset(
-              "assets/images/splash/splash image.png",
+              "assets/images/background/splash image.png",
               height: double.infinity,
               width: double.infinity,
               fit: BoxFit.cover,
@@ -33,41 +33,43 @@ class _HomeState extends State<Home> {
               children: [
                 Stack(
                   children: [
-                    SafeArea(
-                      child: FrostedGlass(
-                        height: MediaQuery.of(context).size.height * 0.16,
-                        width: MediaQuery.of(context).size.width,
-                        borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(20),
-                          bottomRight: Radius.circular(20),
-                        ),
-                        border:
-                            Border.all(color: Colors.black.withOpacity(0.0)),
-                        gradient: LinearGradient(colors: [
-                          Colors.black.withOpacity(0.30),
-                          Colors.black.withOpacity(0.20)
-                        ]),
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 30, left: 25, right: 25),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                height: 50,
-                                width: 50,
-                                decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.black,
-                                ),
-                                child: const Icon(
-                                  Icons.menu,
-                                  size: 30,
-                                  color: Colors.white,
-                                ),
+                    FrostedGlass(
+                      height: MediaQuery.of(context).size.height * 0.16,
+                      width: MediaQuery.of(context).size.width,
+                      borderRadius: const BorderRadius.only(
+                        bottomLeft: Radius.circular(20),
+                        bottomRight: Radius.circular(20),
+                      ),
+                      border:
+                          Border.all(color: Colors.black.withOpacity(0.0)),
+                      gradient: LinearGradient(colors: [
+                        Colors.black.withOpacity(0.30),
+                        Colors.black.withOpacity(0.20)
+                      ]),
+
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            top: 30, left: 25, right: 25),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              height: 50,
+                              width: 50,
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.black,
                               ),
-                              const SingleChildScrollView(
+                              child: const Icon(
+                                Icons.menu,
+                                size: 30,
+                                color: Colors.white,
+                              ),
+                            ),
+                            const SingleChildScrollView(
+                              child: Padding(
+                                padding: EdgeInsets.only(top: 40),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -86,25 +88,28 @@ class _HomeState extends State<Home> {
                                   ],
                                 ),
                               ),
-                              Container(
-                                height: 50,
-                                width: 50,
-                                decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.black,
-                                ),
-                                child: const Icon(
-                                  Icons.perm_contact_cal_outlined,
-                                  size: 30,
-                                  color: Colors.white,
-                                ),
+                            ),
+                            Container(
+                              height: 50,
+                              width: 50,
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.black,
                               ),
-                            ],
-                          ),
+                              child: const Icon(
+                                Icons.perm_contact_cal_outlined,
+                                size: 30,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
                   ],
+                ),
+                const SizedBox(
+                  height: 15,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(),
@@ -169,6 +174,7 @@ class _HomeState extends State<Home> {
           FrostedGlass(
               height: MediaQuery.of(context).size.height * 0.10,
               width: double.infinity,
+              border: Border.all(color: Colors.white.withOpacity(0.30)),
               child: const Padding(
                 padding: EdgeInsets.symmetric(vertical: 10),
                 child: Row(

@@ -6,13 +6,14 @@ class MyCustomButton extends StatelessWidget {
   final double ? width;
   final String ? textName;
   final void Function()? onTap;
+  final BorderRadiusGeometry? borderRadius;
 
   const MyCustomButton({
     super.key,
      this.height,
      this.width,
      this.textName,
-    this.onTap,
+    this.onTap, this.borderRadius,
   });
 
   @override
@@ -23,7 +24,7 @@ class MyCustomButton extends StatelessWidget {
         height: height ?? MediaQuery.of(context).size.height * 0.06,
         width: width ?? MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius:borderRadius ?? BorderRadius.circular(15),
           gradient: const LinearGradient(
             colors: [
               RColors.buColors,

@@ -1,5 +1,6 @@
 
 import 'package:cosmic_app/view/pages/home/home.dart';
+import 'package:cosmic_app/view/pages/visit/visit.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: Visit(),
     );
   }
 }

@@ -7,14 +7,14 @@ class Splash extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-alignment: Alignment.center,
+        alignment: Alignment.center,
         children: [
           SizedBox(
             child: SizedBox(
               height: double.infinity,
               width: double.infinity,
               child: Image.asset(
-                "assets/images/splash/splash image.png",
+                "assets/images/background/splash image.png",
                 fit: BoxFit.cover,
               ),
             ),
@@ -26,7 +26,7 @@ alignment: Alignment.center,
               Image.asset("assets/images/splash/v3.png"),
               Image.asset("assets/images/splash/v1.png"),
               Positioned(
-                bottom: 0,
+                  bottom: 0,
                   top: 12,
                   child: Image.asset("assets/images/splash/v.png")),
               Image.asset("assets/images/splash/v2.png"),
@@ -59,7 +59,6 @@ alignment: Alignment.center,
                   color: Colors.white),
             ),
           ),
-
         ],
       ),
     );
