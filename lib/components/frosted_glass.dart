@@ -7,20 +7,28 @@ class FrostedGlass extends StatelessWidget {
   final double width;
   final Widget child;
   final void Function()? onTap;
+  final BorderRadiusGeometry? borderRadius;
+  final BoxBorder? border;
+  final Gradient ? gradient;
+  final List<BoxShadow>? boxShadow;
   const FrostedGlass(
       {super.key,
       required this.height,
       required this.width,
-      required this.onTap,
-      required this.child});
+      this.onTap,
+      required this.child,
+      this.borderRadius,
+      this.border, this.gradient,
+        this.boxShadow});
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(20),
-        topRight: Radius.circular(20),
-      ),
+      borderRadius: borderRadius ??
+          const BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
       child: Container(
         height: height,
         width: width,
@@ -33,18 +41,20 @@ class FrostedGlass extends StatelessWidget {
             ),
             Container(
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey.withOpacity(0.8)),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20),
-                  ),
-                  gradient: LinearGradient(
+                  border:border ?? Border.all(color: Colors.grey.withOpacity(0.8)),
+                  borderRadius: borderRadius ??
+                      const BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20),
+                      ),
+                  boxShadow: boxShadow,
+                  gradient:gradient ?? LinearGradient(
                       begin: Alignment.topRight,
                       end: Alignment.topCenter,
                       colors: [
-                    Colors.black12.withOpacity(0.25),
-                    Colors.black12.withOpacity(0.15)
-                  ])),
+                        Colors.black12.withOpacity(0.25),
+                        Colors.black12.withOpacity(0.15)
+                      ])),
             ),
             child,
           ],

@@ -1,10 +1,15 @@
 import 'package:cosmic_app/components/frosted_glass.dart';
-import 'package:cosmic_app/utils/const/color_code.dart';
+import 'package:cosmic_app/view/pages/home/widget/details_custom_container.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,163 +26,141 @@ class Home extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          const Positioned(
-            bottom: 0,
-            top: 40,
-            child: Text(
-              "cosmic",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 40),
-            ),
-          ),
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              FrostedGlass(
-                height: MediaQuery.of(context).size.height * 0.70,
-                width: MediaQuery.of(context).size.width,
-                onTap: () {},
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 25,right: 25,top: 40),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                    
-                      children: [
-                        const Text(
-                          "Sign in",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 30,
-                              color: Colors.white),
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                Stack(
+                  children: [
+                    SafeArea(
+                      child: FrostedGlass(
+                        height: MediaQuery.of(context).size.height * 0.16,
+                        width: MediaQuery.of(context).size.width,
+                        borderRadius: const BorderRadius.only(
+                          bottomLeft: Radius.circular(20),
+                          bottomRight: Radius.circular(20),
                         ),
-                        const SizedBox(height: 20,),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                    
-                          children: [
-                          TextField(
-                            decoration: InputDecoration(
-                                labelText: "E-mail",
-                                labelStyle: const TextStyle(color: Colors.grey),
-                                filled: true,
-                                fillColor: Colors.black,
-                                enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                    borderSide: const BorderSide(color: Colors.grey)),
-                                focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                    borderSide: const BorderSide(color: Colors.white))),
+                        border: Border.all(color: Colors.black.withOpacity(0.0)),
+                        gradient: LinearGradient(colors: [
+                          Colors.black.withOpacity(0.30),
+                          Colors.black.withOpacity(0.20)
+                        ]),
+                        child: Padding(
+                          padding:
+                          const EdgeInsets.only(top: 30, left: 25, right: 25),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                height: 50,
+                                width: 50,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.black,
+                                ),
+                                child: const Icon(
+                                  Icons.menu,
+                                  size: 30,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              const SingleChildScrollView(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "Milky Way",
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 18),
+                                    ),
+                                    Text(
+                                      "Solar System",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 25),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                height: 50,
+                                width: 50,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.black,
+                                ),
+                                child: const Icon(
+                                  Icons.perm_contact_cal_outlined,
+                                  size: 30,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
                           ),
-                    const SizedBox(height: 30,),
-                          TextField(
-                            decoration: InputDecoration(
-                                labelText: "Password",
-                                labelStyle: const TextStyle(color: Colors.grey),
-                                filled: true,
-                                fillColor: Colors.black,
-                                enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                    borderSide: const BorderSide(color: Colors.grey)),
-                                focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(15),
-                                    borderSide: const BorderSide(color: Colors.white))),
-                          ),
-                          TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                "Forget Password",
-                                style: TextStyle(
-                                    color: Color(int.parse(RColors.tColors))),
-                              )),
-                        ],),
-                    
-                    
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                          Container(
-                            height: MediaQuery.of(context).size.height * 0.06,
-                            width: MediaQuery.of(context).size.width,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              gradient: const LinearGradient(
-                                colors: [
-                                  RColors.buColors,
-                                  RColors.bColors,
-                                  RColors.bColor,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(),
+                  child: SizedBox(
+                    height: 70,
+                    width: double.infinity,
+                    child: ListView.builder(
+                        itemCount: 9,
+                        shrinkWrap: true,
+                        physics: const ScrollPhysics(),
+                        primary: false,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) {
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: FrostedGlass(
+                              height: 0,
+                              width: MediaQuery.of(context).size.width / 3,
+                              border: Border.all(
+                                  color: Colors.black.withOpacity(0.0)),
+                              borderRadius:
+                              const BorderRadius.all(Radius.circular(25)),
+                              gradient: LinearGradient(colors: [
+                                Colors.black.withOpacity(0.35),
+                                Colors.black.withOpacity(0.25)
+                              ]),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.40),
+                                  offset: const Offset(-10, -5),
+                                  blurRadius: 10,
+                                  spreadRadius: 10,
+                                ),
+                              ],
+                              child: Row(
+                                children: [
+                                  Image.asset(
+                                      "assets/images/planet/planet.png"),
+                                  const Text(
+                                    "Mercury",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                  ),
                                 ],
                               ),
                             ),
-                            child: const Center(
-                              child: Text("Sign in",style: TextStyle(
-                                  color: Colors.white,fontWeight: FontWeight.bold,fontSize: 22
-                              ),),
-                            ),
-                          ),
-                            const SizedBox(height: 20,),
-                          const Text("or sign in using"),
-                        ],),
-                        const SizedBox(height: 20,),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              margin: const EdgeInsets.only(right: 10),
-                              height: 60,
-                              width: 60,
-                              decoration: const BoxDecoration(
-                                  color: Colors.black,
-                                shape: BoxShape.circle,
-                                  image: DecorationImage(image: AssetImage("assets/images/vector/twiter.png"))
-                              ),
-                    
-                            ),
-                            Container(
-                              height: 60,
-                              width: 60,
-                              margin: const EdgeInsets.only(right: 10),
-                              decoration: const BoxDecoration(
-                                  color: Colors.black,
-                                shape: BoxShape.circle,
-                                image: DecorationImage(image: AssetImage("assets/images/vector/facebook.png"))
-                              ),
-                    
-                            ),
-                            Container(
-                              height: 60,
-                              width: 60,
-                              decoration: const BoxDecoration(
-                             color: Colors.black,
-                                shape: BoxShape.circle,
-                                  image: DecorationImage(image: AssetImage("assets/images/vector/google.png"))
-                              ),
-                    
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 50,),
-                        const Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Don't have an account?",style:TextStyle(
-                              color: Colors.grey
-                            ) ,),
-                            Text(
-                              "Sign Up?",
-                              style: TextStyle(color: RColors.bColor),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
+                          );
+                        }),
                   ),
                 ),
-              ),
-            ],
-          )
+                const SizedBox(
+                  height: 15,
+                ),
+                const DetailsCustomContainer(),
+                SizedBox(height: 50,),
+              ],
+            ),
+          ),
         ],
       ),
     );

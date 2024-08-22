@@ -1,4 +1,6 @@
-import 'package:cosmic_app/view/pages/splash/splash.dart';
+import 'package:cosmic_app/components/bottom_nav_bar.dart';
+import 'package:cosmic_app/view/pages/auth/login/sign_in.dart';
+import 'package:cosmic_app/view/pages/home/home.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -9,9 +11,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Splash(),
+      home: BottomNav(),
     );
   }
 }
