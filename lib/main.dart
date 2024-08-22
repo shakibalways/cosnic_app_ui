@@ -1,5 +1,4 @@
-import 'package:cosmic_app/components/bottom_nav_bar.dart';
-import 'package:cosmic_app/view/pages/auth/login/sign_in.dart';
+
 import 'package:cosmic_app/view/pages/home/home.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BottomNav(),
+      home: Home(),
     );
   }
 }

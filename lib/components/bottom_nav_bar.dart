@@ -1,3 +1,4 @@
+
 import 'package:cosmic_app/view/pages/home/home.dart';
 import 'package:flutter/material.dart';
 class BottomNav extends StatefulWidget {
@@ -16,7 +17,6 @@ class _BottomNavState extends State<BottomNav> {
       const Home(),
       navBarPage(Icons.favorite),
       navBarPage(Icons.notifications),
-      navBarPage(Icons.person_outlined),
     ];
     super.initState();
   }
@@ -24,12 +24,12 @@ class _BottomNavState extends State<BottomNav> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+
       bottomNavigationBar: BottomNavigationBar(
         iconSize: 30,
         currentIndex: selectedIndex,
-        backgroundColor: Colors.white,
         selectedItemColor: Colors.green,
+        backgroundColor: Colors.black,
         unselectedItemColor: Colors.black45,
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
@@ -50,7 +50,6 @@ class _BottomNavState extends State<BottomNav> {
       body: page[selectedIndex],
     );
   }
-
   navBarPage(iconName) {
     return Center(
       child: Icon(

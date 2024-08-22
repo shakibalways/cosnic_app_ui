@@ -1,4 +1,5 @@
 import 'package:cosmic_app/components/frosted_glass.dart';
+import 'package:cosmic_app/utils/const/color_code.dart';
 import 'package:cosmic_app/view/pages/home/widget/details_custom_container.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Stack(
         alignment: Alignment.bottomCenter,
         children: [
@@ -39,14 +41,15 @@ class _HomeState extends State<Home> {
                           bottomLeft: Radius.circular(20),
                           bottomRight: Radius.circular(20),
                         ),
-                        border: Border.all(color: Colors.black.withOpacity(0.0)),
+                        border:
+                            Border.all(color: Colors.black.withOpacity(0.0)),
                         gradient: LinearGradient(colors: [
                           Colors.black.withOpacity(0.30),
                           Colors.black.withOpacity(0.20)
                         ]),
                         child: Padding(
-                          padding:
-                          const EdgeInsets.only(top: 30, left: 25, right: 25),
+                          padding: const EdgeInsets.only(
+                              top: 30, left: 25, right: 25),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -123,7 +126,7 @@ class _HomeState extends State<Home> {
                               border: Border.all(
                                   color: Colors.black.withOpacity(0.0)),
                               borderRadius:
-                              const BorderRadius.all(Radius.circular(25)),
+                                  const BorderRadius.all(Radius.circular(25)),
                               gradient: LinearGradient(colors: [
                                 Colors.black.withOpacity(0.35),
                                 Colors.black.withOpacity(0.25)
@@ -157,10 +160,62 @@ class _HomeState extends State<Home> {
                   height: 15,
                 ),
                 const DetailsCustomContainer(),
-                SizedBox(height: 50,),
+                const SizedBox(
+                  height: 150,
+                ),
               ],
             ),
           ),
+          FrostedGlass(
+              height: MediaQuery.of(context).size.height * 0.10,
+              width: double.infinity,
+              child: const Padding(
+                padding: EdgeInsets.symmetric(vertical: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      children: [
+                        Icon(
+                          Icons.home_outlined,
+                          color: RColors.bColor,
+                          size: 30,
+                        ),
+                        Text(
+                          "Home",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Icon(
+                          Icons.favorite,
+                          color: RColors.bColor,
+                          size: 30,
+                        ),
+                        Text(
+                          "Favorite",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Icon(
+                          Icons.more_horiz,
+                          color: RColors.bColor,
+                          size: 30,
+                        ),
+                        Text(
+                          "More",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ))
         ],
       ),
     );

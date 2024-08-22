@@ -122,7 +122,7 @@ class DetailsCustomContainer extends StatelessWidget {
                       height: 10,
                     ),
                     Text(
-                      maxLines: 10,
+                      maxLines: 11,
                       overflow: TextOverflow.ellipsis,
                       "The Solar System[c] is the gravitationally bound system of the Sun and the objects that orbit it. It formed 4.6 billion years ago from the gravitational collapse of a giant interstellar molecular cloud. The vast majority (99.86%) of the system's mass is in the Sun, with most of the remaining mass contained in the planet Jupiter. The four inner system planets—Mercury, Venus, Earth and Mars—are terrestrial planets, being composed primarily of rock and metal. The four giant planets of the outer system are substantially larger and more massive than the terrestrials.",
                       style: TextStyle(color: Colors.white),
