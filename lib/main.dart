@@ -1,5 +1,3 @@
-
-import 'package:cosmic_app/view/pages/home/home.dart';
 import 'package:cosmic_app/view/pages/visit/visit.dart';
 import 'package:flutter/material.dart';
 
