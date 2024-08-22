@@ -64,7 +64,7 @@ class DetailsCustomContainer extends StatelessWidget {
                                 Text(
                                   maxLines: 5,
                                   overflow: TextOverflow.ellipsis,
-                                  "Mars is the fourth planet from\nthe Sunand the second-smallest\nplanet in the Solar System,only\nbeing largerthanMercury.In the\nEnglish language,\nMars is named for theRoman god of war.",
+                                  "Mars is the fourth planet from\nthe Sunand the second-smallest\nplanet in the Solar System,only\nbeing larger than Mercury.In the\nEnglish language,\nMars is named for theRoman god of war.",
                                   style: TextStyle(
                                       color: Colors.white),
                                 ),

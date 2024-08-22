@@ -1,6 +1,7 @@
 import 'package:cosmic_app/components/frosted_glass.dart';
 import 'package:cosmic_app/utils/const/color_code.dart';
 import 'package:cosmic_app/view/pages/home/widget/details_custom_container.dart';
+import 'package:cosmic_app/view/pages/visit/visit.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -144,6 +145,9 @@ class _HomeState extends State<Home> {
                                   spreadRadius: 10,
                                 ),
                               ],
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>const Visit()));
+                              },
                               child: Row(
                                 children: [
                                   Image.asset(

@@ -1,10 +1,28 @@
+import 'package:cosmic_app/view/pages/auth/login/sign_in.dart';
 import 'package:flutter/material.dart';
 
-class Splash extends StatelessWidget {
+class Splash extends StatefulWidget {
   const Splash({super.key});
 
   @override
+  State<Splash> createState() => _SplashState();
+}
+
+class _SplashState extends State<Splash> {
+  @override
+  void initState() {
+    goToNextScreen();
+    super.initState();
+  }
+
+  goToNextScreen()async{
+    await Future.delayed(const Duration(seconds: 3),(){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>SignIn()));
+    });
+  }
+  @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Stack(
         alignment: Alignment.center,

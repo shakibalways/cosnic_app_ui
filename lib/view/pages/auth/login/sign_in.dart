@@ -4,6 +4,7 @@ import 'package:cosmic_app/view/pages/auth/login/widget/my_email_field.dart';
 import 'package:cosmic_app/view/pages/auth/login/widget/my_password_field.dart';
 import 'package:cosmic_app/view/pages/auth/login/widget/custom_container.dart';
 import 'package:cosmic_app/view/pages/auth/login/widget/my_custom_button.dart';
+import 'package:cosmic_app/view/pages/home/home.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatelessWidget {
@@ -80,12 +81,14 @@ class SignIn extends StatelessWidget {
                                 )),
                           ],
                         ),
-                        const Column(
+                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            MyCustomButton(),
-                            SizedBox(height: 20),
-                            Text("or sign in using"),
+                            MyCustomButton(onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>const Home()));
+                            },),
+                            const SizedBox(height: 20),
+                            const Text("or sign in using"),
                           ],
                         ),
                         const SizedBox(height: 20),
