@@ -21,6 +21,7 @@ class Visit extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
+
         SafeArea(
           child: Column(
             children: [
