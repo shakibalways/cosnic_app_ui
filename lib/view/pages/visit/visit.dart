@@ -174,7 +174,7 @@ class Visit extends StatelessWidget {
                         const Text(
                           textAlign: TextAlign.center,
                           "Distance from\nSun(106 km)",
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.white)
                         ),
                         const Text(
                           "24",
