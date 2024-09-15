@@ -209,6 +209,7 @@ class Visit extends StatelessWidget {
           ),
         ),
       ],
-    ));
+    ),
+    );
   }
 }
