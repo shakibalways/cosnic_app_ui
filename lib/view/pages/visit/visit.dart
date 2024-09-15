@@ -189,7 +189,6 @@ class Visit extends StatelessWidget {
                 ),
                 const SizedBox(height: 50,),
                 MyCustomButton(
-
                   width: MediaQuery.of(context).size.width*0.35,
                   textName: "Visit",
                   borderRadius: BorderRadius.circular(25),
