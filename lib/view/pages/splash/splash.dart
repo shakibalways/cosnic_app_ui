@@ -14,15 +14,16 @@ class _SplashState extends State<Splash> {
     goToNextScreen();
     super.initState();
   }
-
-  goToNextScreen()async{
-    await Future.delayed(const Duration(seconds: 3),(){
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>SignIn()));
+// next screen function
+  goToNextScreen() async {
+    await Future.delayed(const Duration(seconds: 3), () {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => SignIn()));
     });
   }
+
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Stack(
         alignment: Alignment.center,
