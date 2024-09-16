@@ -37,6 +37,7 @@ class _SplashState extends State<Splash> {
               ),
             ),
           ),
+
           Stack(
             clipBehavior: Clip.none,
             alignment: Alignment.center,
