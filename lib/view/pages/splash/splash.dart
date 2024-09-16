@@ -68,6 +68,7 @@ class _SplashState extends State<Splash> {
               ),
             ],
           ),
+
           const Positioned(
             bottom: 70,
             child: Text(
